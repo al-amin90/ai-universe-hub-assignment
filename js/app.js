@@ -24,6 +24,7 @@ const displayUniverseData = (universes, dataLimit) => {
         aiUniverseDiv.classList.add('col');
         aiUniverseDiv.innerHTML = `
             <div class="card h-100 p-4">
+                <div> </div>
                 <img src="${universe.image ? universe.image : ''}" class="card-img-top" alt="...">
                 <div class="">
                     <h5 class="card-title text-heading mt-4">Features</h5>
@@ -100,7 +101,12 @@ const displayDetails = (data) => {
         </div>
         <div class="card border-secondary mb-3 w-100">
             <div class="card-body text-secondary text-center">
+                <div class="position-relative ">
                 <img class="img-fluid" src="${data.image_link[0]}" alt="">
+                    <div class="position-absolute top-0 end-0 ">
+                        <p class="accuracy">94% accuracy</p>
+                    </div>
+                </div>
                 <h5 class="text-heading mt-3">${data.input_output_examples ? data.input_output_examples[0].input : 'Can you give any example?' }</h5>
                 <p class="card-text">${data.input_output_examples ? data.input_output_examples[0].output : 'No! Not Yet! Take a break!!!'}</p>
             </div>

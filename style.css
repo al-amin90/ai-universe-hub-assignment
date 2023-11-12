@@ -52,7 +52,14 @@ hr {
     border-radius: 10%;
 }
 
-
+.accuracy{
+    background-color: #EB5757;
+    color: white;
+    margin: .8rem;  
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+}
 
 @media only screen and (max-width: 600px){
     .subcrition-card{
