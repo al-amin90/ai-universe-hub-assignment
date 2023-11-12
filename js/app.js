@@ -5,6 +5,7 @@ const loadUniverseData = async (dataLimit) => {
     displayUniverseData(data.data.tools, dataLimit);
 }
 
+const loader = document.getElementById('loader');
 const displayUniverseData = (universes, dataLimit) => {
     const showAll = document.getElementById('show-all');
     if ( dataLimit && universes.length > 6) {
@@ -46,6 +47,7 @@ const displayUniverseData = (universes, dataLimit) => {
             </div>
         `;
         aiUniverseCards.appendChild(aiUniverseDiv);
+        loader.classList.add('d-none');
     });
 }
 
@@ -105,7 +107,10 @@ const displayDetails = (data) => {
         </div>
     `;
     modalBody.appendChild(modalDiv);
+    loader.classList.add('d-none');
 }
 
 
+
+loader.classList.remove('d-none');
 loadUniverseData(6);
