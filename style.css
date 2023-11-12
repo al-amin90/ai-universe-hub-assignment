@@ -5,13 +5,13 @@
 /* -----------text style is here -------- */
 .text-heading {
     color: #111;
-    font-size: 25px;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
 .text-paragraph {
     color: #585858;
-    font-size: 16px;
+    font-size: 0.8rem;
     font-weight: 400;
     margin-bottom: 0.25rem;
 }
@@ -25,4 +25,38 @@
 
 hr {
     margin-bottom: 0;
+}
+
+/*-------- modals style are here ----------- */
+.modal {
+    --bs-modal-width: 70rem;
+}
+
+.modal-content{
+    padding: 2rem;
+}
+
+.card-body{
+    padding: 1rem;
+}
+
+.modal-card-left{
+    background-color: rgba(235, 87, 87, 0.05);  ;
+}
+
+.subcrition-card{
+    background-color: rgb(255, 255, 255);
+    font-size: 1rem;
+    padding: 1.5rem;
+    margin: .8rem;
+    border-radius: 10%;
+}
+
+
+
+@media only screen and (max-width: 600px){
+    .subcrition-card{
+        padding: 0.6rem;
+        margin: .2rem;
+    }
 }

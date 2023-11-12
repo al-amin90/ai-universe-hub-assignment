@@ -1,4 +1,4 @@
-const loadUniverseData = async(dataLimit) => {
+const loadUniverseData = async (dataLimit) => {
     const url = `https://openapi.programming-hero.com/api/ai/tools`;
     const res = await fetch(url);
     const data = await res.json();
@@ -6,12 +6,18 @@ const loadUniverseData = async(dataLimit) => {
 }
 
 const displayUniverseData = (universes, dataLimit) => {
-    console.log(universes);
-
     const showAll = document.getElementById('show-all');
+    if ( dataLimit && universes.length > 6) {
+        universes = universes.slice(0, 6);
+        showAll.classList.remove('d-none');
+    }
+    else{
+        showAll.classList.add('d-none');
+    }
     const aiUniverseCards = document.getElementById('ai-universe-cards');
+    aiUniverseCards.textContent = '';
     universes.forEach(universe => {
-        console.log(universe);  
+        console.log(universe);
         const aiUniverseDiv = document.createElement('div');
         aiUniverseDiv.classList.add('col');
         aiUniverseDiv.innerHTML = `
@@ -32,7 +38,7 @@ const displayUniverseData = (universes, dataLimit) => {
                                 <i class="fa-solid fa-calendar-days"></i>
                                 <p class="text-paragraph m-2">${universe.published_in}</p>
                             </div>
-                            <div><i class="fa-solid fa-arrow-right btn "></i></div>
+                            <div type="button" data-bs-toggle="modal" data-bs-target="#univers"><i class="fa-solid fa-arrow-right btn"></i></div>
                         </div>
                     </div>
                 </div>
@@ -44,9 +50,9 @@ const displayUniverseData = (universes, dataLimit) => {
 
 const showMoreBtn = () => {
     loadUniverseData();
-    // showAll.classList.add('d-none');
+    showAll.classList.add('d-none');
 }
 
 
 
-loadUniverseData();
+loadUniverseData(6);
